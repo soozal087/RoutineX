@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rise | Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="journey">
+    <main class="wrap">
+      <section class="two">
+        <div class="card tilt center">
+          <div class="stage3d">
+            <div class="planet" id="planet">
+              <div class="sphere"></div>
+              <i class="ringp"></i>
+              <div class="orbit">
+                <div class="spin"><span class="moon"></span></div>
+              </div>
+            </div>
+          </div>
+          <h1 id="rankName"></h1>
+          <p class="muted small" id="xpText"></p>
+          <div class="track"><div class="fill" id="xpFill"></div></div>
+        </div>
+        <div class="card">
+          <h2>Daily log</h2>
+          <p class="muted small">How are you feeling today?</p>
+          <div class="moods" id="moods">
+            <button
+              type="button"
+              data-mood="1"
+              aria-label="Low"
+              aria-pressed="false"
+            >
+              😴
+            </button>
+            <button
+              type="button"
+              data-mood="2"
+              aria-label="Okay"
+              aria-pressed="false"
+            >
+              😐
+            </button>
+            <button
+              type="button"
+              data-mood="3"
+              aria-label="Good"
+              aria-pressed="false"
+            >
+              🙂
+            </button>
+            <button
+              type="button"
+              data-mood="4"
+              aria-label="Great"
+              aria-pressed="false"
+            >
+              😄
+            </button>
+            <button
+              type="button"
+              data-mood="5"
+              aria-label="Amazing"
+              aria-pressed="false"
+            >
+              🚀
+            </button>
+          </div>
+          <label class="sr" for="note">Note for today</label>
+          <textarea
+            id="note"
+            rows="4"
+            placeholder="One thing you want to remember about today..."
+          ></textarea>
+          <p class="small muted">Saved automatically</p>
+        </div>
+      </section>
+      <section>
+        <h2>Badges</h2>
+        <div class="badges" id="badges"></div>
+      </section>
+      <section>
+        <h2>Recent entries</h2>
+        <div class="card"><ul class="notes" id="noteList"></ul></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

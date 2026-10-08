@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rise | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="dashboard">
+    <main class="wrap">
+      <section id="today" class="two">
+        <div class="card today tilt">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#7c5cff" />
+                  <stop offset="1" stop-color="#2ee6d6" />
+                </linearGradient>
+              </defs>
+              <circle class="track-c" cx="60" cy="60" r="52" />
+              <circle
+                class="arc"
+                id="ringArc"
+                cx="60"
+                cy="60"
+                r="52"
+                stroke="url(#g)"
+              />
+            </svg>
+            <div class="pct num" id="ringPct">0%</div>
+          </div>
+          <div class="info">
+            <p class="muted" id="dateText"></p>
+            <h1 id="greeting"></h1>
+            <p class="muted" id="doneText"></p>
+            <div class="rank">
+              <strong id="rankName"></strong
+              ><span class="muted small" id="xpText"></span>
+            </div>
+            <div class="track"><div class="fill" id="xpFill"></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Morning routine</h2>
+          <ul class="tasks" id="todayList"></ul>
+        </div>
+      </section>
+
+      <section class="two">
+        <div class="card tilt">
+          <h2>Hydration</h2>
+          <p class="amt">
+            <span class="num" id="mwAmt">0</span
+            ><span class="muted"> / <span id="mwGoal">2000</span> ml</span>
+          </p>
+          <div class="track"><div class="fill" id="mwFill"></div></div>
+          <div class="row">
+            <button type="button" class="primary" id="mwAdd">+250 ml</button>
+            <button type="button" class="ghost" id="mwUndo">Undo</button>
+            <a class="ghost" href="water.html">Open hydration</a>
+          </div>
+        </div>
+        <div class="card tilt">
+          <h2>Command cube</h2>
+          <div class="cubestage">
+            <div class="cube">
+              <a
+                class="face f1"
+                href="water.html"
+                target="_blank"
+                rel="noopener"
+                ><b>💧</b>Hydration</a
+              >
+              <a
+                class="face f2"
+                href="focus.html"
+                target="_blank"
+                rel="noopener"
+                ><b>⏱️</b>Focus</a
+              >
+              <a
+                class="face f3"
+                href="journey.html"
+                target="_blank"
+                rel="noopener"
+                ><b>🪐</b>Journey</a
+              >
+              <a class="face f4" href="#today"><b>✅</b>Routine</a>
+              <a class="face f5" href="#month"><b>📅</b>Month</a>
+              <a class="face f6" href="#goals"><b>🎯</b>Goals</a>
+            </div>
+          </div>
+          <p class="small muted center">
+            Hover to pause it, then click a face.
+          </p>
+        </div>
+      </section>
+
+      <section id="month">
+        <div class="head">
+          <h2>Your month</h2>
+          <div class="pager">
+            <button type="button" id="prev" aria-label="Previous month">
+              &lsaquo;
+            </button>
+            <span id="monthLabel"></span>
+            <button type="button" id="next" aria-label="Next month">
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+        <p class="small muted note">
+          A strong day means you finished at least 80% of your tasks.
+        </p>
+        <div class="card">
+          <h3>Last 7 days</h3>
+          <div class="week" id="week"></div>
+        </div>
+        <div class="card scroll" id="grid"></div>
+      </section>
+
+      <section id="goals">
+        <h2>Tasks and monthly goals</h2>
+        <div class="card">
+          <form id="addForm" class="add">
+            <label
+              >Task
+              <input
+                id="hName"
+                type="text"
+                placeholder="e.g. Meditate for 5 minutes"
+                maxlength="60"
+                required
+              />
+            </label>
+            <label
+              >Time (optional)
+              <input id="hTime" type="time" />
+            </label>
+            <label
+              >Goal (days per month)
+              <input id="hTarget" type="number" min="1" max="31" value="20" />
+            </label>
+            <button type="submit" class="primary">Add task</button>
+          </form>
+          <ul class="goals" id="goalList"></ul>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
